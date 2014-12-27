@@ -1,0 +1,80 @@
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+header h1{
+	text-align: center;
+	color: #0066ff;
+	font-size: 72px;
+}
+
+header h3 {
+	text-align: center;
+	color: #4354ff;
+	font-size: 20px;
+}
+
+.input-form {
+	margin: 30px auto;
+	text-align: center;
+}
+
+.input-form input {
+	height: 40px;
+	font-size: 20px;
+}
+
+.add-button {
+	background-color:#44c767;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	height: 40px;
+}
+
+.add-button:hover {
+	background-color:#5cbf2a;
+}
+
+.work-list {
+	margin: 30px auto;
+	text-align: center;
+}
+
+.work-list-item {
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	text-align: left;
+	margin: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: rgba(234, 255, 0, 0.6);
+}
+
+.work-list-item label {
+	margin-left: 30px;
+	width: 100%;
+	font-size: 30px;
+}
+
+.work-list-item i {
+	color: red;
+}
+
+.work-active, .work-active i {
+	opacity: 0.3;
+	color: #00ff78;
+}
