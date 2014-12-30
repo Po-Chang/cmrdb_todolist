@@ -26,7 +26,7 @@ header h3 {
 	font-size: 20px;
 }
 
-.add-button {
+.button {
 	background-color:#44c767;
 	-moz-border-radius:12px;
 	-webkit-border-radius:12px;
@@ -42,7 +42,7 @@ header h3 {
 	height: 40px;
 }
 
-.add-button:hover {
+.button:hover {
 	background-color:#5cbf2a;
 }
 
