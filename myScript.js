@@ -43,7 +43,7 @@ var clickAddButton = function() {
 		arr.push([userInput, nowTimestamp]);
 
 		// 儲存至local stroage
-		localStorage["todoList"] = JSON.stringify(arr);
+		localStorage.setItem("todoList", JSON.stringify(arr));
 
 		// 新增成功後將text field 設為空值
 		$('#user-input').val('');
@@ -52,7 +52,7 @@ var clickAddButton = function() {
 
 var clickInitButton = function() {
 	// 刪除local stroage
-	localStorage["todoList"] = undefined;
+	localStorage.removeItem("todoList");
 
 	// 將所有work-list-item 移除
 	$('.work-list-item').each(function() {
@@ -105,13 +105,13 @@ function timeFormat(date) {
 
 $(document).ready(function() {
 	// 如果有local stroage則將它讀出放到arr 陣列當中
-	if(typeof(localStorage["todoList"]) !== 'undefined') {
-		console.log('todolist had value');
-		console.log(localStorage["todolist"]);
-		arr = JSON.parse(localStorage["todoList"]);
+	if(localStorage.getItem("todoList") === null) {
+		console.log('todolist did not had value.');
 	}
 	else {
-		console.log('todolist did not had value.');
+		console.log('todolist had value');
+		console.log(localStorage.getItem("todoList"));
+		arr = JSON.parse(localStorage.getItem("todoList"));
 	}
 
 	// 初始化陣列，若loacl stroage 有值，則arr為之前儲存的內容，相反則為Demo 元素
