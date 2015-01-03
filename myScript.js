@@ -18,6 +18,7 @@ var clickAddButton = function() {
 
 	// 判斷輸入內容是否為空
 	if(userInput == '') {
+		$('#user-input').blur();
 		alert("輸入欄位不可以是空白喔！");
 	}
 	else {
