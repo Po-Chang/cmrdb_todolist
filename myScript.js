@@ -90,7 +90,7 @@ function initArray() {
 	}
 }
 
-// 將時間戳記轉為 HH : MM : SS 的格式
+// 將時間戳記轉為 年/月/日 HH : MM : SS 的格式
 function timeFormat(date) {
 	var formatTimeString = '';
 
@@ -100,6 +100,9 @@ function timeFormat(date) {
 	formatTimeString += (date.getMinutes() == 0) ? '00' : date.getMinutes();
 	formatTimeString += ' : ';
 	formatTimeString += (date.getSeconds() == 0) ? '00' : date.getSeconds();
+
+	// 加上日期
+	formatTimeString = date.getFullYear() + '/' + (date.getMonth()+1) + '/' + date.getDate() + ' ' + formatTimeString;
 
 	return formatTimeString;
 }
