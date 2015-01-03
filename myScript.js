@@ -1,12 +1,17 @@
 // 全域變數
 var count = 0;
 var userInput = '';
-var arr = ["Demo 元素"];
+var arr = [["Demo 元素",1419649200000]];
+var timeString = '';
 
 // 當Add 按鈕觸發時執行
 var clickAddButton = function() {
 
-	var date = new Date();
+	// 取得當下時間戳記
+	var nowTimestamp = $.now();
+	
+	// 將時間戳記轉換為JavaScript時間物件
+	var date = new Date(nowTimestamp);
 
 	// 取得text field value
 	userInput = $('#user-input').val();
@@ -16,26 +21,29 @@ var clickAddButton = function() {
 		alert("輸入欄位不可以是空白喔！");
 	}
 	else {
+		timeString = timeFormat(date);
+
 		// 加入一個新事件到DOM當中
 		$('.work-list')
 		.append(
 			$('<div id="'+count+'" class="work-list-item">')
 			.append('<i class="fa fa-gittip fa-2x"></i>')
-			.append('<label for="work-item' + count +  '" class="work-title">' + userInput));
+			.append('<label for="work-item' + count +  '" class="work-title">' + userInput)
+			.append('<span class="work-date">' + timeString));
 
 		// 新增新的元素之後幫它綁定監聽事件
 		$('#'+count).click(function() {
 			$(this).toggleClass('work-active');
 		});
 
+		// 新增一筆新的item, count加一
+		count++;
+
 		// 將使用者新輸入的值放到陣列當中
-		arr.push(userInput);
+		arr.push([userInput, nowTimestamp]);
 
 		// 儲存至local stroage
 		localStorage["todoList"] = JSON.stringify(arr);
-
-		// 新增一筆新的item, count加一
-		count++;
 
 		// 新增成功後將text field 設為空值
 		$('#user-input').val('');
@@ -51,20 +59,25 @@ var clickInitButton = function() {
 		$(this).remove();
 	});
 
-
 	// 將arr 陣列初始化為原本的值
-	arr = ["Demo 元素"];
+	arr = [["Demo 元素",1419649200000]];
 	initArray();
 }
 
 // 用以初始化列表，將所有arr內的資料append到html當中
 function initArray() {
+	console.log(arr);
 	for(var i = 0; i < arr.length; i++) {
+
+		var workDate = new Date(arr[i][1]);
+		timeString = timeFormat(workDate);
+
 		$('.work-list')
 		.append(
 			$('<div id="'+count+'" class="work-list-item">')
 			.append('<i class="fa fa-gittip fa-2x"></i>')
-			.append('<label for="work-item' + count +  '" class="work-title">' + arr[i]));
+			.append('<label for="work-item' + count +  '" class="work-title">' + arr[i][0])
+			.append('<span class="work-date">' + timeString));
 
 		// 新增新的元素之後幫它綁定監聽事件
 		$('#'+count).click(function() {
@@ -74,6 +87,20 @@ function initArray() {
 		// 新增一筆新的item, count加一
 		count++;
 	}
+}
+
+// 將時間戳記轉為 HH : MM : SS 的格式
+function timeFormat(date) {
+	var formatTimeString = ''
+
+	// 將時、分、秒分別判斷是否為0，若為0，則將格式改為00，再將其組合成我們預想的格式
+	formatTimeString = (date.getHours() == 0) ? '00' : date.getHours();
+	formatTimeString += ' : ';
+	formatTimeString += (date.getMinutes() == 0) ? '00' : date.getMinutes();
+	formatTimeString += ' : ';
+	formatTimeString += (date.getSeconds() == 0) ? '00' : date.getSeconds();
+
+	return formatTimeString;
 }
 
 $(document).ready(function() {

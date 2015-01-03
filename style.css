@@ -5,6 +5,7 @@
 }
 
 header h1{
+	padding-top: 20px;
 	text-align: center;
 	color: #0066ff;
 	font-size: 72px;
@@ -62,6 +63,19 @@ header h3 {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	background-color: rgba(234, 255, 0, 0.6);
+
+	-o-transition: background-color .4s linear;
+    -webkit-transition: background-color .4s linear;
+    -moz-transition: background-color .4s linear;
+    transition:  background-color .4s linear;
+}
+
+.work-list-item:hover {
+	background-color: rgba(200, 240, 0, 0.8);
+	-o-transition: background-color .4s linear;
+    -webkit-transition: background-color .4s linear;
+    -moz-transition: background-color .4s linear;
+    transition:  background-color .4s linear;
 }
 
 .work-list-item label {
@@ -77,4 +91,10 @@ header h3 {
 .work-active, .work-active i {
 	opacity: 0.3;
 	color: #00ff78;
+}
+
+.work-date {
+	margin-left: 30px;
+	font-size: 30px;
+	float: right;
 }
