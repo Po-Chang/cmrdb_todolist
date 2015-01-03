@@ -106,7 +106,11 @@ function timeFormat(date) {
 $(document).ready(function() {
 	// 如果有local stroage則將它讀出放到arr 陣列當中
 	if(localStorage["todoList"] !== 'undefined') {
+		console.log('todolist had value');
 		arr = JSON.parse(localStorage["todoList"]);
+	}
+	else {
+		console.log('todolist did not had value.');
 	}
 
 	// 初始化陣列，若loacl stroage 有值，則arr為之前儲存的內容，相反則為Demo 元素
