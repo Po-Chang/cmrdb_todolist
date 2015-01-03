@@ -107,7 +107,7 @@ $(document).ready(function() {
 	// 如果有local stroage則將它讀出放到arr 陣列當中
 	if(localStorage["todoList"] !== 'undefined') {
 		console.log('todolist had value');
-		console.log('localStorage["todolist"]');
+		console.log(localStorage["todolist"]);
 		arr = JSON.parse(localStorage["todoList"]);
 	}
 	else {
