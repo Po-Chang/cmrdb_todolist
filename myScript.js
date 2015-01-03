@@ -91,7 +91,7 @@ function initArray() {
 
 // 將時間戳記轉為 HH : MM : SS 的格式
 function timeFormat(date) {
-	var formatTimeString = ''
+	var formatTimeString = '';
 
 	// 將時、分、秒分別判斷是否為0，若為0，則將格式改為00，再將其組合成我們預想的格式
 	formatTimeString = (date.getHours() == 0) ? '00' : date.getHours();
