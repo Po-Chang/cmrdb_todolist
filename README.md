@@ -8,7 +8,7 @@
 
 ### 使用範例程式
 
-使用此[連結](http://marcuswu0814.io/cmrdb_todolist)即可體驗CMRDB ToDoList。
+使用此[連結](http://marcuswu0814.github.io/cmrdb_todolist)即可體驗CMRDB ToDoList。
 
 ### 下載程式碼
 
