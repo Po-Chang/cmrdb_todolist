@@ -8,11 +8,11 @@
 
 ### 使用範例程式
 
-使用此[連結](http://po-chang.github.io/cmrdb_todolist)即可體驗CMRDB ToDoList。
+使用此[連結](http://marcuswu0814.io/cmrdb_todolist)即可體驗CMRDB ToDoList。
 
 ### 下載程式碼
 
-透過右邊的「[Download ZIP](https://github.com/Po-Chang/cmrdb_todolist/archive/master.zip)」連結下載原始程式碼，提供參考修改練習。
+透過右邊的「[Download ZIP](https://github.com/marcuswu0814/cmrdb_todolist/archive/master.zip)」連結下載原始程式碼，提供參考修改練習。
 
 ### 聯絡我們
 
